@@ -1,0 +1,32 @@
+{
+  "name": "express-api-check",
+  "version": "1.0.0",
+  "description": "An NPM module to display and ping Express API endpoints",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --plugin markdown --ext js,md ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyExplosions/express-api-check.git"
+  },
+  "keywords": [
+    "express.js",
+    "node",
+    "api"
+  ],
+  "author": "Al Graham",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TinyExplosions/express-api-check.git/issues"
+  },
+  "homepage": "https://github.com/TinyExplosions/express-api-check.git#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-markdown": "^1.0.0-beta.6"
+  }
+}
