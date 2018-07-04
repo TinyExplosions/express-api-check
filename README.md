@@ -33,7 +33,7 @@ app.use(require('express-api-check')());
 ```
 
 There is now a new route you can hit, at `/api-test` that will list the `login` and `open`
-endpoints, and allow you to ping them.
+endpoints.
 
 ## License
 

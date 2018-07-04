@@ -1,6 +1,4 @@
 var express = require('express');
-var path = require('path');
-var pug = require('pug');
 
 function getRoutes(path, layer) {
     if (layer.route) {
@@ -58,7 +56,7 @@ function routes() {
             }
         }
 
-        return res.send(pug.renderFile(path.join(__dirname, 'templates') + '/index.pug', { host: fullUrl, routes: routemap }));
+        return res.json(routemap);
     });
 
 
