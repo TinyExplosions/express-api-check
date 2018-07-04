@@ -32,9 +32,12 @@ function split(item) {
 
 function routes(routeName) {
     routeName = routeName || 'api-test';
+    if (routeName.indexOf('/') !== 0) {
+        routeName = '/' + routeName;
+    }
     var router = express.Router();
 
-    router.get('/'+routeName, function(req, res) {
+    router.get(routeName, function(req, res) {
         process.env.routes = "[";
         req.app._router.stack.forEach(getRoutes.bind(null, []));
         process.env.routes = process.env.routes.substring(0, process.env.routes.length - 1) + "]";
