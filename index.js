@@ -30,15 +30,11 @@ function split(item) {
     }
 }
 
-function routes() {
+function routes(routeName) {
+    routeName = routeName || 'api-test';
     var router = express.Router();
 
-
-    router.use('/api-test/assets', express.static(path.join(__dirname, 'assets')));
-
-    router.get('/api-test', function(req, res) {
-        var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-
+    router.get('/'+routeName, function(req, res) {
         process.env.routes = "[";
         req.app._router.stack.forEach(getRoutes.bind(null, []));
         process.env.routes = process.env.routes.substring(0, process.env.routes.length - 1) + "]";
@@ -51,7 +47,7 @@ function routes() {
             var route = routes[i];
             if (route.path.indexOf('sys') !== -1 || route.path.indexOf('mbaas') !== -1) {
                 routemap.platform.push(route);
-            } else if (route.path.indexOf('/api-test') !== 0) {
+            } else if (route.path.indexOf(routeName) !== 0) {
                 routemap.api.push(route);
             }
         }

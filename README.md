@@ -29,8 +29,11 @@ app.get('/open', function (req, res, next) {
     res.send('This page is availabe to the public')
 })
 
-app.use(require('express-api-check')());
+app.use(require('express-api-check')('api-test'));
 ```
+
+By default, the route exposed is `/api-test`, but can be overridden by supplying an alternate endpoint as a
+string parameter (above it is explicitly set as `api-test`)
 
 There is now a new route you can hit, at `/api-test` that will list the `login` and `open`
 endpoints.
